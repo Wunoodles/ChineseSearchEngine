@@ -1,0 +1,4 @@
+Flask==0.10.1
+Flask-RESTful==0.3.4
+Jinja2==2.7.3
+gunicorn==19.3.0
