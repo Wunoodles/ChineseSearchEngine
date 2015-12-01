@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 def Collocation(input_key):
-	f_read = open("Bigram_Reduce.txt","r")
+	f_read = open("./datasource/Bigram_Reduce.txt","r")
 	line = f_read.readline()
 	key = ""
 	output = []
