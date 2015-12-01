@@ -2,29 +2,48 @@
 <html>
 <head>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-
+	<script src="{{ url_for('static', filename='show.js') }}"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <style type="text/css">
 body{
-	
-	background-color: gray;
+	background-image:url("static/images/background.jpg");
+	background-size:cover;
 	background-repeat:no-repeat;
+
 }
 .form_style{
-	color :purple;
-	text-align:center;
-	margin-left: auto;
-  	margin-right: auto;
+	margin-top: 80px;
+	margin-left: 80px;
+}
+.text{
+	font-size: 30px;
+	font-weight: bolder;
+	margin-left: 20px;
+}
+#show{
+	background-color: white;
+	margin: 20px;
+	weight:20%;
+	height:100px;
+	opacity:0.3;
+	padding: 10px;
+	color:red;
 }
 </style>
 <body>
 	<div class = 'form_style'>
-		<p>Hello!</p>
-		<form>
-			<input type="text" name="欄位名稱">
-			<button>查詢</button>
+		<p class="text">Hello!</p>
+		<form id="form" method="POST">
+			<div class="col-xs-4">
+				<input type="text" name="欄位名稱" size="5px" class="form-control" id="input">
+			</div>
+			<button type="button" class="btn btn-default" onclick="Go();">查詢</button>
 		</form>
-		<img url = "../img/background.jpg"></img>
+		<div id="show" class="col-xs-5"></div>
  	</div>
+
+
+
 </body>
 </html>
