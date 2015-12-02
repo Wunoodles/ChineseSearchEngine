@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf8 -*-
 
 from flask import Flask, render_template
 from flask_restful import Resource, Api
@@ -18,8 +18,9 @@ class index(Resource):
 
 class ChineseSerachEngine(Resource):
     def get(self, key):
-         result = OutputCollocation.Collocation(key)
-         return {'result':result,'input':key}
+        key_e = key.encode('utf8')
+        result = OutputCollocation.Collocation(key_e)
+        return {'result':result,'input':key_e}
 
 api.add_resource(index, '/')
 api.add_resource(ChineseSerachEngine,'/<string:key>')
