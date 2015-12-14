@@ -17,29 +17,35 @@ body{
 	margin-left: 80px;
 }
 .text{
-	font-size: 30px;
+	font-size: 50px;
 	font-weight: bolder;
 	margin-left: 20px;
 }
 #show{
+	margin-top: -5px;
+	weight:auto;
+	height:auto;
+}
+.item{
 	background-color: white;
-	margin: 20px;
-	weight:20%;
-	height:100px;
-	opacity:0.3;
-	padding: 10px;
-	color:red;
+	border:1px black solid;
+	opacity:0.5;
+	padding:5px;
+	weight:30px;
+	color:black;
+	height:auto;
 }
 </style>
 <body>
 	<div class = 'form_style'>
 		<p class="text">Hello!</p>
 		<form id="form" method="POST">
-			<div class="col-xs-4">
-				<input type="text" name="欄位名稱" size="5px" class="form-control" id="input">
+			<div class="col-xs-5">
+				<input type="text" name="欄位名稱" size="10px" class="form-control" id="input">
 			</div>
-			<button type="button" class="btn btn-default" onclick="Go();">查詢</button>
 		</form>
+		<br>
+		<br>
 		<div id="show" class="col-xs-5"></div>
  	</div>
 
