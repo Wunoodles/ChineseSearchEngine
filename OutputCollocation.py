@@ -14,3 +14,36 @@ def Collocation(input_key):
 	#無法直接輸出中文的list
 	return ",".join(output)  #輸出是所有結果用逗號隔開
 	
+def Give_Word_Speech(word):
+    f_read = open("./datasource/Word_Speech_MapTable.txt","r")
+    line = f_read.readline()
+    while True:
+        if line == "" :
+            f_read.close()
+            return 'N'                     
+        key, speech = line.split("\t")
+        if key == word:
+            f_read.close()
+            return speech
+        line = f_read.readline()
+    
+
+def Recommendation(Input_Key):
+    f_read = open("./datasource/Recommend_Pattern_Key_1.txt","r")
+    answer_list = []
+    turn = 0
+    line = f_read.readline()
+    while True:
+        if line == "":
+            f_read.close()
+            return "No Recommendation!"
+        key = line.split("\t")[0].split(" ")[0]
+          
+        if key == Input_Key:
+            value = line.split("\t")[0].split(" ")[1:]
+            answer_list.append(value)
+            turn = 1
+        if key !=Input_Key and turn != 0:
+            return answer_list
+        
+        line = f_read.readline()

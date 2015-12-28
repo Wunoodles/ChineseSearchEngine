@@ -16,12 +16,25 @@ class index(Resource):
     def get(self):
 		return "Welcome to ChineseSerachEngine"
 
-class ChineseSerachEngine(Resource):
+class ChineseSerachEngine(Resource):		
     def get(self, key):
-        key_e = key.encode('utf8')
-        result = OutputCollocation.Collocation(key_e)
-        return {'result':result,'input':key_e}
+        if(key >= u'\u4e00' and key <= u'\u9fa5'):
+            key_e = key.encode('utf8')
+            POS = OutputCollocation.Give_Word_Speech(key_e)
+            if(POS == 'N'):
+                result = 'N'
+                collocation = 'N'
+            else:
+                POS_in = POS.strip()
+                result = OutputCollocation.Recommendation(POS_in)
+                collocation = OutputCollocation.Collocation(key_e)
+        else:
+            result = 'NULL'
+            collocation = 'NULL'
+        return {'result':result,'input':key,'collocation':collocation}
 
+
+			
 api.add_resource(index, '/')
 api.add_resource(ChineseSerachEngine,'/<string:key>')
 
