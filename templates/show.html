@@ -4,6 +4,9 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="{{ url_for('static', filename='show.js') }}"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 </head>
 <style type="text/css">
 body{
@@ -13,7 +16,7 @@ body{
 }
 .form_style{
 	margin-top: 80px;
-	margin-left: 80px;
+	margin-left: 80px;sssssssssssss
 }
 .text{
 	font-size: 50px;
@@ -43,11 +46,32 @@ body{
 	color:black;
 	height:auto;
 }
-
+#table{
+	margin-left: 10px;
+	color:	#00FF00;
+	font-weight:bolder;
+}
+#edit{
+	margin-left: 10px;
+	color: 	#0000CD;
+	font-weight:bolder;
+}
+.edit_name{
+	border: 3px;
+	border-color: black;
+	color: 	#00FA9A;
+	display: inline;
+}
 </style>
 <body>
 	<div class = 'form_style'>
-		<p class="text">Hello!</p>
+		<span class="text">Hello!</span>
+		<span id="edit">作者名稱</span>
+		<span id="edit_show"></span>
+		<div title="詞性對照" id="anly001" style="padding: 0.5em; font-family: 新細明體; font-size: 1.17em; line-height: 1.5em; letter-spacing: 0.1em; display: block; text-align: justify; display: none;">
+			<embed src="/table" height="400" width="600"></embed>
+		</div>
+		<a href="javascript: $('#anly001').dialog({autoOpen: true, show:{effect:'drop', direction:'right', duration: 1500}, width: '640', height: 'auto', resizable: false});"><span id="table">詞性對照</span></a>
 		<form id="form" method="POST">
 			<div class="col-xs-5">
 				<input type="text" name="欄位名稱" size="10px" class="form-control" id="input">
@@ -57,8 +81,6 @@ body{
 		<br>
 		<div id="show" class="col-xs-5"></div>
  	</div>
-
-
 
 </body>
 </html>

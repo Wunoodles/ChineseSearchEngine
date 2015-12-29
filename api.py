@@ -16,7 +16,7 @@ class index(Resource):
     def get(self):
 		return "Welcome to ChineseSerachEngine"
 
-class ChineseSerachEngine(Resource):		
+class ChineseSerachEngine(Resource):
     def get(self, key):
         if(key >= u'\u4e00' and key <= u'\u9fa5'):
             key_e = key.encode('utf8')
@@ -33,8 +33,11 @@ class ChineseSerachEngine(Resource):
             collocation = 'NULL'
         return {'result':result,'input':key,'collocation':collocation}
 
+@app.route('/table')
+def table():
+    return render_template('table.html')
 
-			
+
 api.add_resource(index, '/')
 api.add_resource(ChineseSerachEngine,'/<string:key>')
 
