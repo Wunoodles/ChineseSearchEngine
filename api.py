@@ -42,4 +42,4 @@ api.add_resource(index, '/')
 api.add_resource(ChineseSerachEngine,'/<string:key>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
