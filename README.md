@@ -20,7 +20,7 @@ python api.py
        -> V_2(有)
 ● 名詞 -> N
        -> Nh(代名詞)
-       -> Nf(量詞，包含Neqb、Neqa、Neu、Neu)
+       -> Nf(量詞，包含Neqb、Neqa、Neu、Nes)
 ● 形容詞 -> A       
 ● 介系詞 -> P
 ● 連接詞 -> C
