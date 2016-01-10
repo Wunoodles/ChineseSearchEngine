@@ -32,3 +32,9 @@ python api.py
 ● 感嘆詞 -> I
 
 ```
+
+##建立 Heroku 環境檔案
+```
+pip freeze > requirements.txt
+echo web: python app.py > Procfile
+```
