@@ -1,3 +1,7 @@
+##Chinese Sentence System
+
+[中文字詞推薦](https://chinesesentencesystem.herokuapp.com/show)
+
 ##Initial
 ```
 pip install -r requirements.txt
@@ -5,7 +9,7 @@ pip install -r requirements.txt
 ##Dataset
 
 [SB0C4.txt](https://drive.google.com/open?id=0B_vjF2RvQ2EDeUh1NzJvT3F6Unc)
-
+[Need_file](https://www.dropbox.com/sh/ukkyguhe19rtpac/AAALuSQKAC8IVhxDYfPhUZOYa?dl=0)
 
 ##Start
 ```
